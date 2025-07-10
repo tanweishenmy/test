@@ -14,4 +14,4 @@
         
     - name: memory
       shell:
-        cmd: "/usr/bin/free -h"
+        cmd: "free -h"
