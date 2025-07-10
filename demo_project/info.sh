@@ -5,6 +5,6 @@ echo "Hostname: $(hostname)"
 echo "Date: $(date)"
 echo "Kernel: $(uname -r)"
 echo "Memory:"
-free -h
+/usr/bin/free -h
 
 exit 0
