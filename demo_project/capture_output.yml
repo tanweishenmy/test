@@ -6,7 +6,7 @@
   tasks:
     - name: Display something
       ansible.builtin.shell:
-        cmd: ls -l
+        cmd: free -h
         
     - name: Execute the info.sh script
       command: "{{ playbook_dir }}/info.sh"
