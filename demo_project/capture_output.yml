@@ -11,3 +11,7 @@
     - name: Display the script output
       debug:
         var: script_output.stdout_lines
+        
+    - name: memory
+      shell:
+        cmd: "/usr/bin/free -h"
