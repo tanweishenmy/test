@@ -1,0 +1,13 @@
+---
+- name: Capture Script Output
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Execute the info.sh script
+      command: "{{ playbook_dir }}/info.sh"
+      register: script_output
+
+    - name: Display the script output
+      debug:
+        var: script_output.stdout_lines
