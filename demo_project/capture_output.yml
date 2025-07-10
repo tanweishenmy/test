@@ -11,4 +11,7 @@
     - name: Display the script output
       debug:
         var: script_output.stdout_lines
-        
+
+    - name: This command will change the working directory to somedir/
+      ansible.builtin.shell:
+        cmd: ls -l
