@@ -4,6 +4,10 @@
   gather_facts: no
 
   tasks:
+    - name: Display something
+      ansible.builtin.shell:
+        cmd: ls -l
+        
     - name: Execute the info.sh script
       command: "{{ playbook_dir }}/info.sh"
       register: script_output
@@ -12,6 +16,4 @@
       debug:
         var: script_output.stdout_lines
 
-    - name: This command will change the working directory to somedir/
-      ansible.builtin.shell:
-        cmd: ls -l
+
