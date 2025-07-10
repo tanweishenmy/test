@@ -12,6 +12,3 @@
       debug:
         var: script_output.stdout_lines
         
-    - name: memory
-      shell:
-        cmd: "free -h"
