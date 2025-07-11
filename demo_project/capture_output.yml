@@ -5,8 +5,8 @@
 
   tasks:
     - name: Hardware info
-        debug:
-          var: "Hostname: {{ ansible_hostname }}"
+      debug:
+        msg: "Hostname: {{ ansible_hostname }}"
         
     - name: Execute the info.sh script
       command: "{{ playbook_dir }}/info.sh"
