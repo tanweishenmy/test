@@ -4,9 +4,13 @@
   gather_facts: no
 
   tasks:
-    - name: Display something
-      shell: free -h
-      register: script_output
+    - name: Hardware info
+      vars:
+        msg: |
+          RAM: {{ ansible_memtotal_mb }}
+          SWAP: {{ ansible_memory_mb.swap.total }}
+      debug:
+        msg: "{{ msg.split('\n') }}"
         
     - name: Execute the info.sh script
       command: "{{ playbook_dir }}/info.sh"
