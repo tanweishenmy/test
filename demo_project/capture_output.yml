@@ -6,7 +6,11 @@
   tasks:
     - name: Hardware info
       debug:
-        msg: "Hostname: {{ ansible_hostname }}"
+        msg: "Hostname: {{ ansible_fqdn }}"
+        
+    - name: Memory info
+      debug:
+        msg: "Memory: {{ ansible_memory_mb }}"
         
     - name: Execute the info.sh script
       command: "{{ playbook_dir }}/info.sh"
