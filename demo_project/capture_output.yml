@@ -10,7 +10,7 @@
         
     - name: Memory info
       debug:
-        msg: "Memory: {{ ansible_memory_mb }}"
+        msg: "Memory: {{ ansible_memory_mb }}.stdout_lines"
         
     - name: Execute the info.sh script
       command: "{{ playbook_dir }}/info.sh"
