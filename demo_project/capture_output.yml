@@ -5,8 +5,7 @@
 
   tasks:
     - name: Display something
-      ansible.builtin.shell:
-        cmd: ls -l
+      shell: free -h
       register: script_output
         
     - name: Execute the info.sh script
