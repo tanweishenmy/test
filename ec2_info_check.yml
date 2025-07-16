@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+ # vars:
+   # region: ap-southeast-1
+  tasks:
+  - amazon.aws.ec2_instance_info:
+      aws_access_key: "{{ access_key }}"
+      aws_secret_key: "{{ secret_key }}"
+      region: ap-southeast-1
+      instance_ids: i-0c789837784ddfe2d
+    register: node_info
+  - set_fact:
+      info: "{{ node_info.instances[0].private_ip_address }}"
+  - ansible.builtin.debug:
+      msg: "{{ info }}"
