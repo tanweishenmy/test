@@ -1,0 +1,17 @@
+--- 
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: start an instance with a public IP address
+    amazon.aws.ec2_instance:
+      name: "ansible-instance"
+      # key_name: "prod-ssh-key"
+      # vpc_subnet_id: subnet-013744e41e8088axx
+      instance_type: t2.micro
+      security_group: sg-0375c81e95b27e2c8
+      region: ap-southeast-1
+      aws_access_key: "{{access_key}}"  # From vault as defined
+      aws_secret_access_key: "{{secret_key}}"  # From vault as defined      
+      network:
+        assign_public_ip: true
+      image_id: ami-0e7f9c9fced6cfb10
