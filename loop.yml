@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    info: [1,2,3,a]
+  tasks:
+#  - ansible.builtin.debug:
+#      msg: "{{ info }}"
+  - debug:
+      msg: "{{ item }}"
+    loop: "{{ info }}"
