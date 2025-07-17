@@ -1,23 +1,10 @@
 ---
 - name: Capture Script Output
   hosts: localhost
-  gather_facts: yes
+  connection: local
 
   tasks:
-    - name: Hardware info
+    - name: List all facts
       debug:
-        msg: "Hostname: {{ ansible_fqdn }}"
-        
-    - name: Memory info
-      debug:
-        msg: "Memory: {{ ansible_memory_mb }}.stdout_lines"
-        
-    - name: Execute the info.sh script
-      command: "{{ playbook_dir }}/info.sh"
-      register: script_output
-
-    - name: Display the script output
-      debug:
-        var: script_output.stdout_lines
-
-
+        msg: ansible_facts
+      
