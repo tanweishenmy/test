@@ -1,5 +1,0 @@
-ansible-galaxy collection install amazon.aws
-ansible-galaxy role init <filename> # Create a role folder
-pip install boto3
-openssl rand -base64 2048 > vaultpass.password
-ansible-vault edit group_vars/all/password.yml --vault-password-file vaultpass.password 
