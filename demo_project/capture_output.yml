@@ -7,4 +7,4 @@
     - name: List all facts
       debug:
         var: ansible_facts
-      
+        msg: "{{ ansible_facts['memory_mb'] }}"
